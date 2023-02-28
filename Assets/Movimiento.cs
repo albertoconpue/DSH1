@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Movimiento : MonoBehaviour
 {
 
 public GameObject prefabsuelo;
-
+public GameObject prefabpremio;
 public Camera cam;
+private int premios=0;
 private Vector3 offset;
 private  float miX,miZ;
 private Rigidbody rb;
 private Vector3 direccionActual;
 public int velocidad;
+public Text texto;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +56,15 @@ public int velocidad;
         if(otro.transform.tag == "suelo"){
             StartCoroutine(CrearSuelo(otro));
         }
+       
+    }
+    private void OnTriggerEnter(Collider other) {
+
+        Debug.Log("Premio Conseguido");
+        Destroy(other.gameObject);
+        premios++;
+        texto.text = "Premios: " + premios;
+
     }
 
     IEnumerator CrearSuelo(Collision col){
@@ -67,8 +80,9 @@ public int velocidad;
         }
         else{
         miZ += 6.0f;
+        GameObject elpremio = Instantiate(prefabpremio, new Vector3(miX,1,miZ),Quaternion.identity) as GameObject;
         }
-         GameObject elcubo= Instantiate(prefabsuelo,new Vector3(miX,0,miZ),Quaternion.identity) as GameObject;
+        GameObject elcubo= Instantiate(prefabsuelo,new Vector3(miX,0,miZ),Quaternion.identity) as GameObject;
         
     }
 

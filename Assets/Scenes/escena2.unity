@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,7 +321,7 @@ MonoBehaviour:
   prefabsuelo: {fileID: 6931151462029726679, guid: a9ae8e9d60469184baf63bfe7981af04, type: 3}
   prefabpremio: {fileID: 2617618390334970791, guid: 50278a79354b08042a647f800bddf9ce, type: 3}
   cam: {fileID: 2101636652}
-  velocidad: 3
+  velocidad: 4
   texto: {fileID: 1777526776}
 --- !u!1 &1301406281
 GameObject:

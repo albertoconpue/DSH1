@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/escena2.unity
     guid: eab74e433feed504a924433f03e09dd2
+  - enabled: 1
+    path: Assets/Scenes/EscenaVictoria.unity
+    guid: 9a89e16c1b09eb842b126f3cca74c970
   m_configObjects: {}

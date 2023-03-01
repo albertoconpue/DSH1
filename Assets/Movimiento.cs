@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class Movimiento : MonoBehaviour
 {
@@ -43,6 +45,9 @@ public Text texto;
 
             float tiempo = velocidad * Time.deltaTime;
             rb.transform.Translate(direccionActual * tiempo);
+            if(rb.transform.position.y < 0){
+                SceneManager.LoadScene("escena2",LoadSceneMode.Single);
+            }
         }
 
     void SueloInicial(){
@@ -64,6 +69,9 @@ public Text texto;
         Destroy(other.gameObject);
         premios++;
         texto.text = "Premios: " + premios;
+            if(premios == 2){
+                SceneManager.LoadScene("EscenaVictoria",LoadSceneMode.Single);
+            }
 
     }
 
